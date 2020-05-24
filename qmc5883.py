@@ -91,15 +91,15 @@ class QMC5883:
 		self.xOffset = xOffset
 		self.yOffset = yOffset
 		self.zOffset = zOffset
-		self.ControlReg1 = (self.OVER_SAMPLE_RATIO[overSampleRatio] << 6) +\
-				   (self.FULL_SCALE[range] << 4) +\
-				   (self.OUTPUT_DATA_RATE[sampleRate] << 2) +\
+		self.ControlReg1 = (self.OVER_SAMPLE_RATIO[overSampleRatio] << 6) |\
+				   (self.FULL_SCALE[range] << 4) |\
+				   (self.OUTPUT_DATA_RATE[sampleRate] << 2) |\
 				   (self.MODE_CONTROL[mode])
 		#print bin(self.ControlReg1)
 
-		self.ControlReg2 = 	(self.SOFT_RESET["NoSoftReset"] << 7) +\
-					(self.POINTER_ROLL_OVER["DisableRollOver"] << 6) +\
-					(int('00000',2) << 1) +\
+		self.ControlReg2 = 	(self.SOFT_RESET["NoSoftReset"] << 7) |\
+					(self.POINTER_ROLL_OVER["DisableRollOver"] << 6) |\
+					(int('00000',2) << 1) |\
 					(self.INTERRUPT["DisableInt"])
 		#print bin(self.ControlReg2)
 
