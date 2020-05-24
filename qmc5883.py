@@ -190,9 +190,6 @@ class QMC5883:
 		yMax = 0
 		zMin = 0
 		zMax = 0
-		xCount = 0
-		yCount = 0
-		zCount = 0
 		xOffset = 0
 		yOffset = 0
 		zOffset = 0
@@ -205,22 +202,16 @@ class QMC5883:
 				(x,y,z) = self.axes()
 				if (x < xMin):
 					xMin = x
-					xCount+=1
 				if (x > xMax):
 					xMax = x
-					xCount+=1
 				if (y < yMin):
 					yMin = y
-					yCount+=1
 				if (y > yMax):
 					yMax = y
-					yCount+=1
 				if (z < zMin):
 					zMin = z
-					zCount+=1
 				if (z > zMax):
 					zMax = z
-					zCount+=1
 				xOffset = ((xMax - xMin) / 2) - xMax
 				yOffset = ((yMax - yMin) / 2) - yMax
 				zOffset = ((zMax - zMin) / 2) - zMax
