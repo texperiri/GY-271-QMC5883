@@ -180,7 +180,7 @@ class QMC5883:
 
 	# collects the max of x,y,z and calculates the offset
 	# call this method with QMC5883 xOffset,yOffset and zOffset = 0
-	# requires the user to rotate the chip until no more changes in x,y,z and offset occurs
+	# requires the user to rotate the chip until no more changes in x,y,z and offset occur
 	# has to be aborted with STRG+C
 	# use the xOffset,yOffset,zOffset result for the initialization of the QMC5883
 	def calibrate(self):
